@@ -8,7 +8,7 @@ interface MenuItemProps {
 export default function MenuItem({ title, price }: MenuItemProps) {
   return (
     <Stack direction="row" spacing={2}>
-      <Typography gutterBottom variant="h5" component="div">
+      <Typography gutterBottom component="div">
         {title}
       </Typography>
       <Typography color="primary">{price}</Typography>

@@ -1,9 +1,11 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
+import SocialNav from "./SocialNav";
 
 export default function Footer() {
   return (
     <footer>
       <Stack alignItems="center" mb={2}>
+        <SocialNav />
         <Typography>© 2022 Dbarlits</Typography>
         <a
           href="https://twitter.com/homemadecoder"

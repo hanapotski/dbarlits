@@ -274,7 +274,7 @@ export const DRINKS = {
       },
       {
         id: "nib-3",
-        title: "Strawberry Vanlla",
+        title: "Strawberry Vanilla",
         price: "185",
       },
     ],
@@ -296,7 +296,7 @@ export const DRINKS = {
       },
       {
         id: "ni-4",
-        title: "Vanlla Bean",
+        title: "Vanilla Bean",
         price: "150",
       },
       {

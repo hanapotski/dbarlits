@@ -18,12 +18,12 @@ export default function DrinkSection({
   return (
     <Stack spacing={3} alignItems="center">
       <Stack direction="row">
-        <Typography variant="h3" fontWeight="bold">
+        <Typography variant="h4" fontWeight="bold">
           {title}
         </Typography>
         {subtitle && <Chip label={subtitle} color="primary" size="small" />}
       </Stack>
-      <Grid container justifyContent="center" gap={1}>
+      <Grid container justifyContent="center">
         {drinkItems.map((item) => (
           <Grid key={item.id} xs={12} md={4} item={true}>
             <DrinkItem {...item} />
