@@ -1,4 +1,4 @@
-import { Box, Divider, Stack, Typography } from "@mui/material";
+import { Divider, Stack, Typography } from "@mui/material";
 
 const HOURS = [
   { day: "Monday", hours: "11:00 AM - 9:00 PM" },
