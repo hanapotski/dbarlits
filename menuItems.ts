@@ -39,7 +39,7 @@ export const LIGHT_EATS = [
     id: "le-5",
     title: "Poutine",
     description:
-      "Our take on the famous French-Canadian dish. Our take on the famous French-Canadian dish! Potato fries topped with gravy and melted mozzarella cheese",
+      "Our take on the famous French-Canadian dish! Potato fries topped with gravy and melted mozzarella cheese",
     image:
       "https://res.cloudinary.com/dpbh2bgsn/image/upload/w_500,f_auto/v1667025606/Dbarlits/poutine.jpg",
     price: "129",
