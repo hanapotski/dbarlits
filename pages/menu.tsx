@@ -1,7 +1,19 @@
-import { Box, Divider, Stack, Typography } from "@mui/material";
-import { ALL_DAY, DRINKS, LIGHT_EATS, MAIN_EATS, PASTA } from "../menuItems";
+import { Alert, Box, Divider, Stack, Typography } from "@mui/material";
+import {
+  ALL_DAY,
+  COFFEE,
+  EXTRAS,
+  LIGHT_EATS,
+  MAIN_EATS,
+  NONCOFFEE,
+  PASTA,
+  SANDWICHES,
+  SIDES,
+} from "../menuItems";
+import DessertSection from "./components/DessertSection";
 import DrinkSection from "./components/DrinkSection";
 import MenuSection from "./components/MenuSection";
+import SimpleMenuSection from "./components/SimpleMenuSection";
 // import ScrollToTop from "./components/ScrollToTop";
 
 export default function Menu() {
@@ -15,41 +27,34 @@ export default function Menu() {
         <Divider />
         <MenuSection title="Main Eats" menuItems={MAIN_EATS} />
         <Divider />
+        <MenuSection
+          title="Sandwiches"
+          menuItems={SANDWICHES}
+          description="With freshly baked buns/bread, served with fries"
+        />
+        <Divider />
         <MenuSection title="Pasta" menuItems={PASTA} />
+        <Divider />
+        <SimpleMenuSection title="Sides/Extras" menuItems={SIDES} />
+
+        <Alert severity="info" icon={false}>
+          WE COOK YOUR ORDERS AS WE RECEIVE THEM. KINDLY GIVE US 20-30 MINUTES
+          TO PREPARE YOUR MEAL.
+        </Alert>
+
+        <Divider />
+        <DessertSection />
+
         <Divider />
         <Stack spacing={3} alignItems="center">
           <Typography variant="h2">Drinks</Typography>
           <DrinkSection
             title="Coffee"
-            subtitle="Hot"
-            drinkItems={DRINKS["coffee"]["hot"]}
+            description="Please tell our barista your preference. Double Shot (Strong) or Single Shot (Mild)"
+            drinkItems={COFFEE}
           />
-          <DrinkSection
-            title="Coffee"
-            subtitle="Ice-Blended"
-            drinkItems={DRINKS["coffee"]["iceBlended"]}
-          />
-          <DrinkSection
-            title="Coffee"
-            subtitle="Iced"
-            drinkItems={DRINKS["coffee"]["iced"]}
-          />
-          <DrinkSection
-            title="Non-Coffee"
-            subtitle="Hot"
-            drinkItems={DRINKS["nonCoffee"]["hot"]}
-          />
-          <DrinkSection
-            title="Non-Coffee"
-            subtitle="Ice-Blended"
-            drinkItems={DRINKS["nonCoffee"]["iceBlended"]}
-          />
-          <DrinkSection
-            title="Non-Coffee"
-            subtitle="Iced"
-            drinkItems={DRINKS["nonCoffee"]["iced"]}
-          />
-          <DrinkSection title="Extras" drinkItems={DRINKS["extras"]} />
+          <DrinkSection title="Non-Coffee" drinkItems={NONCOFFEE} />
+          <SimpleMenuSection title="Extras" menuItems={EXTRAS} />
         </Stack>
       </Stack>
     </Box>
