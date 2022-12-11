@@ -53,7 +53,7 @@ export default function DrinkSection({ title, description, drinkItems }: DrinkSe
                 <TableCell component="th" scope="row">
                   {row.title}
                 </TableCell>
-                <TableCell align="center">{row.hot}</TableCell>
+                <TableCell align="center">{row.hot || "-"}</TableCell>
                 <TableCell align="center">{row.iced || "-"}</TableCell>
                 <TableCell align="center">{row.iceBlended || "-"}</TableCell>
               </TableRow>
