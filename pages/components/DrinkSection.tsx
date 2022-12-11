@@ -1,35 +1,66 @@
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
-import Grid from "@mui/material/Grid";
 import Chip from "@mui/material/Chip";
 import { DrinkItem as DrinkItemProps } from "../../types";
-import DrinkItem from "./DrinkItem";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import { Box } from "@mui/material";
 
 interface DrinkSectionProps {
   drinkItems: DrinkItemProps[];
   title: string;
-  subtitle?: string;
+  description?: string;
 }
-export default function DrinkSection({
-  title,
-  subtitle,
-  drinkItems,
-}: DrinkSectionProps) {
+export default function DrinkSection({ title, description, drinkItems }: DrinkSectionProps) {
   return (
     <Stack spacing={3} alignItems="center">
-      <Stack direction="row">
-        <Typography variant="h4" fontWeight="bold">
+      <Stack alignItems="center">
+        <Typography variant="h4" fontWeight="bold" color="primary">
           {title}
         </Typography>
-        {subtitle && <Chip label={subtitle} color="primary" size="small" />}
+        <Typography variant="body2">{description}</Typography>
       </Stack>
-      <Grid container justifyContent="center">
-        {drinkItems.map((item) => (
-          <Grid key={item.id} xs={12} md={4} item={true}>
-            <DrinkItem {...item} />
-          </Grid>
-        ))}
-      </Grid>
+
+      <TableContainer component={Box}>
+        <Table aria-label="drinks table">
+          <TableHead>
+            <TableRow>
+              <TableCell></TableCell>
+              <TableCell align="center">
+                Hot
+                <Chip label="12oz" color="primary" size="small" />
+              </TableCell>
+              <TableCell align="center">
+                Iced
+                <Chip label="16oz" color="secondary" size="small" />
+              </TableCell>
+              <TableCell align="center">
+                Ice-Blended
+                <Chip label="16oz" color="primary" size="small" />
+              </TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {drinkItems.map((row) => (
+              <TableRow
+                key={row.id}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell component="th" scope="row">
+                  {row.title}
+                </TableCell>
+                <TableCell align="center">{row.hot}</TableCell>
+                <TableCell align="center">{row.iced || "-"}</TableCell>
+                <TableCell align="center">{row.iceBlended || "-"}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </Stack>
   );
 }

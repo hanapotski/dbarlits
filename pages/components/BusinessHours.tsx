@@ -11,8 +11,14 @@ const HOURS = [
 ];
 export default function BusinessHours() {
   return (
-    <Stack sx={{ width: "100vw", padding: 2 }} spacing={0.5}>
-      <Typography color="primary" variant="h2" fontSize="2em" align="center">
+    <Stack sx={{ width: "100vw", padding: 2, maxWidth: 380 }} spacing={1}>
+      <Typography
+        color="primary"
+        variant="h2"
+        fontSize="2em"
+        align="center"
+        fontWeight="bold"
+      >
         Business Hours
       </Typography>
       <Divider />

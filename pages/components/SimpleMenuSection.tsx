@@ -2,33 +2,34 @@ import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import Grid from "@mui/material/Grid";
 import { MenuItem as MenuItemProps } from "../../types";
-import MenuItem from "./MenuItem";
 
-interface MenuSectionProps {
+interface SimpleMenuSectionProps {
   menuItems: MenuItemProps[];
   title: string;
-  description?: string;
 }
-export default function MenuSection({
+export default function SimpleMenuSection({
   title,
-  description,
   menuItems,
-}: MenuSectionProps) {
+}: SimpleMenuSectionProps) {
   return (
     <Stack spacing={3} alignItems="center">
       <Stack>
         <Typography variant="h2">{title}</Typography>
-        <Typography variant="body2" color="primary">
-          {description}
-        </Typography>
       </Stack>
-      <Grid container justifyContent="center" gap={3}>
+
+      <div>
         {menuItems.map((item) => (
-          <Grid key={item.id} xs={12} md={4} item={true}>
-            <MenuItem {...item} />
-          </Grid>
+          <Stack
+            key={item.id}
+            direction="row"
+            gap={4}
+            justifyContent="space-between"
+          >
+            <Typography>{item.title}</Typography>
+            <Typography color="primary">{item.price}</Typography>
+          </Stack>
         ))}
-      </Grid>
+      </div>
     </Stack>
   );
 }

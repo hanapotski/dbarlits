@@ -10,10 +10,20 @@ const theme = createTheme({
       main: "#6D499E",
     },
     secondary: {
-      main: "##e0d47a",
+      main: "#F3CC55",
     },
     error: {
       main: red.A400,
+    },
+  },
+  components: {
+    MuiAlert: {
+      styleOverrides: {
+        standardInfo: {
+          backgroundColor: "#6D499E",
+          color: "#F3CC55",
+        },
+      },
     },
   },
 });
