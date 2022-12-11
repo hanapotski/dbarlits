@@ -2,11 +2,13 @@ import { Box, Divider, Stack, Typography } from "@mui/material";
 import { ALL_DAY, DRINKS, LIGHT_EATS, MAIN_EATS, PASTA } from "../menuItems";
 import DrinkSection from "./components/DrinkSection";
 import MenuSection from "./components/MenuSection";
+// import ScrollToTop from "./components/ScrollToTop";
 
 export default function Menu() {
   return (
     <Box>
-      <Stack spacing={8}>
+      {/* <ScrollToTop /> */}
+      <Stack spacing={4}>
         <MenuSection title="Light Eats" menuItems={LIGHT_EATS} />
         <Divider />
         <MenuSection title="All Day Breakfast" menuItems={ALL_DAY} />
